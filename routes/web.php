@@ -16,5 +16,11 @@ Route::get('/', function () {
 });
 
 Auth::routes();
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/home', 'HomeController@index')->name('home');
+    Route::group(['prefix' => 'records','as'=>'records.'], function () {
+        Route::get('javascript','RecordsController@index')->name('javascript');
+        Route::get('json','RecordsController@json')->name('json');
+    });
 
-Route::get('/home', 'HomeController@index')->name('home');
+});
