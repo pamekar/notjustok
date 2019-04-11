@@ -5,21 +5,57 @@
         <div class="block-content block-content-full px-lg-5 py-md-5 py-lg-6">
             <div class="mb-2 text-center">
                 <a class="link-fx font-w700 font-size-h1" href="{{url('/')}}">
-                    <span class="text-dark">not</span><span class="text-primary">justok</span>
+                    <span class="text-dark">not</span><span class="text-success">justok</span>
                 </a>
                 <p class="text-uppercase font-w700 font-size-sm text-muted">@yield('title')</p>
             </div>
-            <form class="js-validation-signin" action="https://demo.pixelcave.com/dashmix/be_pages_auth_all.html" method="post">
+            <form class="js-validation-signin" action="{{route('login')}}" method="post">
+                @csrf
                 <div class="form-group">
-                    <input type="text" class="form-control form-control-alt" id="login-username" name="login-username" placeholder="Username">
+                    <input id="email" type="email"
+                           class="form-control-alt{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email"
+                           placeholder="Email" value="{{ old('email') }}" required autofocus>
+
+                    @if ($errors->has('email'))
+                        <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('email') }}</strong>
+                                    </span>
+                    @endif
                 </div>
                 <div class="form-group">
-                    <input type="password" class="form-control form-control-alt" id="login-password" name="login-password" placeholder="Password">
+                    <input id="password" type="password"
+                           class="form-control-alt{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" placeholder="Password"
+                           required>
+
+                    @if ($errors->has('password'))
+                        <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('password') }}</strong>
+                                    </span>
+                    @endif
                 </div>
+
+                <div class="form-group">
+                    <div class="custom-control custom-checkbox">
+                        <input class="custom-control-input" id="remember" name="remember" type="checkbox"  {{ old('remember') ? 'checked' : '' }}>
+                        <label class="custom-control-label" for="example-checkbox-custom1">{{ __('Remember Me') }}</label>
+                    </div>
+                </div>
+
                 <div class="form-group">
                     <button type="submit" class="btn btn-block btn-hero-primary">
                         <i class="fa fa-fw fa-sign-in-alt mr-1"></i> Sign In
                     </button>
+                    <p class="mt-3 mb-0 d-lg-flex justify-content-lg-between">
+                        @if (Route::has('password.request'))
+                            <a class="btn btn-sm btn-light d-block d-lg-inline-block mb-1"
+                               href="{{route('password.request')}}">
+                                @endif
+                                <i class="fa fa-exclamation-triangle text-muted mr-1"></i> Forgot password
+                            </a>
+                            <a class="btn btn-sm btn-light d-block d-lg-inline-block mb-1" href="{{route('register')}}">
+                                <i class="fa fa-plus text-muted mr-1"></i> New Account
+                            </a>
+                    </p>
                 </div>
             </form>
         </div>
