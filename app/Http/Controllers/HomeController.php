@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Record;
+use App\Upload;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -23,6 +26,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $records = Record::where('user_id', Auth::id())->get();
+        $uploads = Upload::where('user_id', Auth::id())->get();
+
+        return view('home', compact('records', 'uploads'));
     }
 }
