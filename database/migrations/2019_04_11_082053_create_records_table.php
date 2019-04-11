@@ -16,10 +16,11 @@ class CreateRecordsTable extends Migration
         Schema::create('records', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('upload_id');
+            $table->unsignedBigInteger('user_id');
             $table->string('isrc');
             $table->string('artist');
             $table->string('product_title');
-            $table->string('contrainer_title');
+            $table->string('container_title');
             $table->string('label');
             $table->string('country');
             $table->integer('total_plays');

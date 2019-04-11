@@ -15,8 +15,10 @@ class CreateUploadsTable extends Migration
     {
         Schema::create('uploads', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->unsignedBigInteger('user_id');
             $table->string('title');
             $table->string('batch_code');
+            $table->unsignedInteger('row_count')->default('0');
             $table->timestamps();
         });
     }
