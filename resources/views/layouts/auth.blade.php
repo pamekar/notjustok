@@ -55,7 +55,7 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="block block-themed block-transparent mb-0">
-                    <div class="block-header bg-primary-dark">
+                    <div class="block-header bg-success-dark">
                         <h3 class="block-title">Terms &amp; Conditions</h3>
                         <div class="block-options">
                             <button type="button" class="btn-block-option" data-dismiss="modal" aria-label="Close">
@@ -94,7 +94,7 @@
 <script src="/js/dashmix.app.min-1.1.js"></script>
 <script src="/js/jquery.validate.min.js"></script>
 <script src="/js/op_auth_signin.min.js"></script>
+<script src="/js/op_auth_signup.min.js"></script>
 </body>
 
-<!-- Mirrored from demo.pixelcave.com/dashmix/op_auth_signin_box.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 30 May 2018 16:47:15 GMT -->
 </html>
