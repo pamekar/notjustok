@@ -13,14 +13,23 @@
 
 Route::get('/', function () {
     return view('welcome');
-});
-
+})->name('welcome');
+Route::get('/search', function () {
+    abort(401);
+})->name('search');
+Route::get('/settings', function () {
+    abort(401);
+})->name('settings');
+Route::get('/accounts', function () {
+    abort(401);
+})->name('accounts');
 Auth::routes();
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/home', 'HomeController@index')->name('home');
-    Route::group(['prefix' => 'records','as'=>'records.'], function () {
-        Route::get('javascript','RecordsController@index')->name('javascript');
-        Route::get('json','RecordsController@json')->name('json');
-    });
-
+    Route::get('records/json', 'RecordController@json')->name('records.json');
+    Route::get('uploads/json', 'UploadController@json')->name('uploads.json');
+    Route::resources([
+        'records' => 'RecordController',
+        'uploads' => 'UploadController'
+    ]);
 });
