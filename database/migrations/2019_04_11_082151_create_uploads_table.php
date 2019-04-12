@@ -15,10 +15,11 @@ class CreateUploadsTable extends Migration
     {
         Schema::create('uploads', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('user_id');
-            $table->string('title');
-            $table->string('batch_code');
-            $table->unsignedInteger('row_count')->default('0');
+            $table->unsignedBigInteger('user_id')->nullable();
+            $table->string('batch_code')->nullable();
+            $table->string('title')->nullable();
+            $table->text('description')->nullable();
+            $table->unsignedInteger('row_count')->default('0')->nullable();
             $table->timestamps();
         });
     }

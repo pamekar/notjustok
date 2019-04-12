@@ -15,18 +15,18 @@ class CreateRecordsTable extends Migration
     {
         Schema::create('records', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('upload_id');
-            $table->unsignedBigInteger('user_id');
-            $table->string('isrc');
-            $table->string('artist');
-            $table->string('product_title');
-            $table->string('container_title');
-            $table->string('label');
-            $table->string('country');
-            $table->integer('total_plays');
-            $table->integer('revenue');
-            $table->timestamp('start_at')->nullable();
-            $table->timestamp('end_at')->nullable();
+            $table->unsignedBigInteger('upload_id')->nullable();
+            $table->unsignedBigInteger('user_id')->nullable();
+            $table->string('isrc')->nullable();
+            $table->string('artist')->nullable();
+            $table->string('product_title')->nullable();
+            $table->string('container_title')->nullable();
+            $table->string('label')->nullable();
+            $table->string('country')->nullable();
+            $table->integer('total_plays')->nullable();
+            $table->integer('revenue')->nullable();
+            $table->date('start_at')->nullable();
+            $table->date('end_at')->nullable();
             $table->timestamps();
         });
     }
