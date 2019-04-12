@@ -57,41 +57,34 @@
                         <span class="nav-main-link-name">Dashboard</span>
                     </a>
                 </li>
-                <li class="nav-main-heading">Records</li>
+                <li class="nav-main-heading">Application</li>
                 <li class="nav-main-item">
-                    <a class="nav-main-link" href="#">
-                        <i class="nav-main-link-icon si si-bag"></i>
-                        <span class="nav-main-link-name">Using Javascript (default)</span>
+                    <a class="nav-main-link" href="{{route('uploads.index')}}">
+                        <i class="nav-main-link-icon si si-cloud-upload"></i>
+                        <span class="nav-main-link-name">Uploads</span>
                     </a>
                 </li>
                 <li class="nav-main-item">
-                    <a class="nav-main-link" href="#">
-                        <i class="nav-main-link-icon si si-users"></i>
-                        <span class="nav-main-link-name">Using PHP</span>
-                    </a>
-                </li>
-                <li class="nav-main-heading">Uploads</li>
-                <li class="nav-main-item">
-                    <a class="nav-main-link" href="#">
-                        <i class="nav-main-link-icon si si-support"></i>
+                    <a class="nav-main-link" href="{{route('uploads.create')}}">
+                        <i class="nav-main-link-icon si si-plus"></i>
                         <span class="nav-main-link-name">New Upload</span>
                     </a>
                 </li>
                 <li class="nav-main-item">
-                    <a class="nav-main-link" href="#">
-                        <i class="nav-main-link-icon si si-envelope"></i>
-                        <span class="nav-main-link-name">View Uploads</span>
+                    <a class="nav-main-link" href="{{route('records.index')}}">
+                        <i class="nav-main-link-icon si si-docs"></i>
+                        <span class="nav-main-link-name">Records</span>
                     </a>
                 </li>
                 <li class="nav-main-heading">Personal</li>
                 <li class="nav-main-item">
-                    <a class="nav-main-link" href="#">
+                    <a class="nav-main-link" href="{{route('accounts')}}">
                         <i class="nav-main-link-icon si si-user"></i>
                         <span class="nav-main-link-name">Account</span>
                     </a>
                 </li>
                 <li class="nav-main-item">
-                    <a class="nav-main-link" href="#">
+                    <a class="nav-main-link" href="{{route('settings')}}">
                         <i class="nav-main-link-icon si si-settings"></i>
                         <span class="nav-main-link-name">Settings</span>
                     </a>
@@ -113,7 +106,7 @@
     <header id="page-header">
         <div class="content-header">
             <div>
-                <a class="link-fx font-size-lg text-dual" href="index.html">
+                <a class="link-fx font-size-lg text-dual" href="{{route('welcome')}}">
                     <span class="font-w700 text-dual">not</span><span class="font-w300">justok</span>
                 </a>
             </div>
@@ -123,7 +116,7 @@
                     <i class="fa fa-fw fa-search"></i>
                 </button>
                 <form class="form-inline d-none d-md-inline-block mr-2"
-                      action="https://demo.pixelcave.com/dashmix/be_pages_generic_search.html" method="post">
+                      action="{{route('search')}}" method="get">
                     <div class="input-group input-group-sm">
                         <input type="text" class="form-control form-control-alt" placeholder="Search.."
                                id="page-header-search-input2" name="page-header-search-input2">
@@ -173,7 +166,7 @@
                     </h1>
                     <nav class="flex-sm-00-auto ml-sm-3 font-size-sm" aria-label="breadcrumb">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item">Home</li>
+                            <li class="breadcrumb-item"><a href="{{route('welcome')}}">Home</a></li>
                             <li class="breadcrumb-item active" aria-current="page">@yield('title')</li>
                         </ol>
                     </nav>
@@ -193,35 +186,37 @@
                 <div class="block-content block-content-full">
                     <div class="row no-gutters border">
                         <div class="col-sm-6 col-xl-3 invisible" data-toggle="appear">
-                            <a class="block block-bordered block-link-pop text-center mb-0" href="javascript:void(0)">
+                            <a class="block block-bordered block-link-pop text-center mb-0" href="{{route('home')}}">
                                 <div class="block-content block-content-full text-center">
-                                    <i class="far fa-2x fa-compass text-primary d-none d-sm-inline-block mb-3"></i>
+                                    <i class="fa fa-2x fa-home text-primary d-none d-sm-inline-block mb-3"></i>
+                                    <div class="font-w600 text-uppercase">Home</div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-sm-6 col-xl-3 invisible" data-toggle="appear">
+                            <a class="block block-bordered block-link-pop text-center mb-0"
+                               href="{{route('uploads.index')}}">
+                                <div class="block-content block-content-full text-center">
+                                    <i class="fa fa-2x fa-cloud-upload-alt text-primary d-none d-sm-inline-block mb-3"></i>
                                     <div class="font-w600 text-uppercase">Uploads</div>
                                 </div>
                             </a>
                         </div>
                         <div class="col-sm-6 col-xl-3 invisible" data-toggle="appear">
-                            <a class="block block-bordered block-link-pop text-center mb-0" href="javascript:void(0)">
+                            <a class="block block-bordered block-link-pop text-center mb-0"
+                               href="{{route('uploads.create')}}">
                                 <div class="block-content block-content-full text-center">
-                                    <i class="fa fa-2x fa-shopping-basket text-primary d-none d-sm-inline-block mb-3"></i>
+                                    <i class="fa fa-2x fa-upload text-primary d-none d-sm-inline-block mb-3"></i>
                                     <div class="font-w600 text-uppercase">New Upload</div>
                                 </div>
                             </a>
                         </div>
                         <div class="col-sm-6 col-xl-3 invisible" data-toggle="appear">
                             <a class="block block-bordered block-link-pop text-center mb-0"
-                               href="{{route('records.javascript')}}">
+                               href="{{route('records.index')}}">
                                 <div class="block-content block-content-full text-center">
-                                    <i class="far fa-2x fa-user-circle text-primary d-none d-sm-inline-block mb-3"></i>
-                                    <div class="font-w600 text-uppercase">JS Records</div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-sm-6 col-xl-3 invisible" data-toggle="appear">
-                            <a class="block block-bordered block-link-pop text-center mb-0" href="javascript:void(0)">
-                                <div class="block-content block-content-full text-center">
-                                    <i class="far fa-2x fa-edit text-primary d-none d-sm-inline-block mb-3"></i>
-                                    <div class="font-w600 text-uppercase">PHP Records</div>
+                                    <i class="fa fa-2x fa-database text-primary d-none d-sm-inline-block mb-3"></i>
+                                    <div class="font-w600 text-uppercase">Records</div>
                                 </div>
                             </a>
                         </div>
@@ -244,7 +239,7 @@
                                                                                target="_blank">pamekar</a>
                 </div>
                 <div class="col-sm-6 order-sm-1 py-1 text-center text-sm-left">
-                    <a class="font-w600" href="https://goo.gl/mDBqx1" target="_blank">notjustok 1.1</a> &copy; <span
+                    <a class="font-w600" href="{{route('welcome')}}" target="_blank">notjustok 1.1</a> &copy; <span
                             data-toggle="year-copy">{{date('Y')}}</span>
                 </div>
             </div>
@@ -253,8 +248,19 @@
 </div>
 <script src="/js/dashmix.core.min-1.1.js"></script>
 <script src="/js/dashmix.app.min-1.1.js"></script>
+
+@if(null!==session('notification'))
+    <script src="/js/bootstrap-notify.min.js"></script>
+    <script>
+        jQuery(function () {
+            Dashmix.helpers('notify', {
+                type:    '{{session('notification')['type']}}',
+                icon:    'fa fa-check mr-1',
+                message: '{{session('notification')['message']}}'
+            });
+        });
+    </script>
+@endif
 @yield('scripts')
 </body>
-
-<!-- Mirrored from demo.pixelcave.com/dashmix/db_classic_boxed.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 30 May 2018 16:47:13 GMT -->
 </html>

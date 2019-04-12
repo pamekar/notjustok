@@ -1,32 +1,37 @@
 @extends('layouts.app')
-@section('title','Dashboard')
+@section('title','Javascript Records')
 @section('styles')
     <link rel="stylesheet" href="/css/datatables.bootstrap4.css">
     <link rel="stylesheet" href="/css/buttons.bootstrap4.min.css">
     <link rel="stylesheet" href="/css/responsive.bootstrap4.min.css">
+    <script>
+        const ajaxURL = "{{route('uploads.json')}}";
+        const columns = [
+            {name: 'id'},
+            {name: 'batch_code'},
+            {name: 'title'},
+            {name: 'description'},
+            {name: 'row_count'},
+            {name: 'created_at'}
+        ];
+        const serverSide = true;
+    </script>
 @endsection
 @section('content')
     <div class="block block-rounded block-bordered">
         <div class="block-header block-header-default">
-            <h3 class="block-title">Records
-                <small>Javascript Generated</small>
-            </h3>
+            <h3 class="block-title">Uploads</h3>
         </div>
         <div class="block-content block-content-full">
             <table class="table table-bordered table-striped table-vcenter js-dataTable-buttons display responsive">
                 <thead>
                 <tr>
                     <th class="text-center" style="width: 80px;">#</th>
-                    <th>ISRC</th>
-                    <th>Artist</th>
-                    <th>Product Title</th>
-                    <th>Container Title</th>
-                    <th>Label</th>
-                    <th>Country</th>
-                    <th>Total Plays</th>
-                    <th>Revenue</th>
-                    <th>Start At</th>
-                    <th>End At</th>
+                    <th>Batch Code</th>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Row Count</th>
+                    <th>Created At</th>
                 </tr>
                 </thead>
             </table>
