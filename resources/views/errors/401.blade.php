@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>404 - {{config('app.name')}}</title>
+    <title>401/503 - {{config('app.name')}}</title>
     <meta name="description" content="Dashmix - Bootstrap 4 Admin Template &amp; UI Framework created by pixelcave and published on Themeforest | This is the demo of Dashmix! You need to purchase a license for legal use! | DEMO">
     <meta name="author" content="pixelcave">
     <meta name="robots" content="noindex, nofollow">
@@ -23,24 +23,17 @@
 <body>
 <div id="page-container">
     <main id="main-container">
-        <div class="bg-image" style="background-image: url('/jpg/photo19%402x.jpg');">
-            <div class="hero bg-white-95">
+        <div class="bg-image" style="background-image: url('/jpg/photo8%402x.jpg');">
+            <div class="hero bg-black-75">
                 <div class="hero-inner">
                     <div class="content content-full">
                         <div class="px-3 py-5 text-center">
-                            <div class="row invisible" data-toggle="appear">
-                                <div class="col-sm-6 text-center text-sm-right">
-                                    <div class="display-1 text-danger font-w700">404</div>
-                                </div>
-                                <div class="col-sm-6 text-center d-sm-flex align-items-sm-center">
-                                    <div class="display-1 text-muted font-w300">Error</div>
-                                </div>
-                            </div>
-                            <h1 class="h2 font-w700 mt-5 mb-3 invisible" data-toggle="appear" data-class="animated fadeInUp" data-timeout="300">Oops.. There's no page for you here..</h1>
-                            <h2 class="h3 font-w400 text-muted mb-5 invisible" data-toggle="appear" data-class="animated fadeInUp" data-timeout="450">We are sorry, you wandered too far..</h2>
+                            <div class="display-1 text-danger font-w700 invisible" data-toggle="appear" data-class="animated fadeInDown">401<small class="text-secondary">/503</small></div>
+                            <h1 class="h2 font-w700 text-white mt-5 mb-3 invisible" data-toggle="appear" data-class="animated fadeInUp">Oops.. You are not authorised to view this page.</h1>
+                            <h2 class="h3 font-w400 text-white-75 mb-5 invisible" data-toggle="appear" data-class="animated fadeInUp">Truth is, we're still working on it :)</h2>
                             <div class="invisible" data-toggle="appear" data-class="animated fadeInUp" data-timeout="600">
                                 <a class="btn btn-hero-secondary" href="{{url()->previous()}}">
-                                    <i class="fa fa-arrow-left mr-1"></i> Retrace your Steps
+                                    <i class="fa fa-arrow-left mr-1"></i> Please leave this page :)
                                 </a>
                             </div>
                         </div>
