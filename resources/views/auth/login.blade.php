@@ -76,3 +76,6 @@
         </div>
     </div>
 @endsection
+@section('scripts')
+    <script src="/js/op_auth_signin.min.js"></script>
+@endsection

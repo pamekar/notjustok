@@ -7,14 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>@yield('title') - {{config('app.name')}}</title>
     <meta name="description"
-          content="Dashmix - Bootstrap 4 Admin Template &amp; UI Framework created by pixelcave and published on Themeforest | This is the demo of Dashmix! You need to purchase a license for legal use! | DEMO">
-    <meta name="author" content="pixelcave">
+          content="{{config('app.name')}}">
+    <meta name="author" content="{{config('app.name')}}">
     <meta name="robots" content="noindex, nofollow">
     <meta property="og:title"
-          content="Dashmix - Bootstrap 4 Admin Template &amp; UI Framework | This is the demo of Dashmix! You need to purchase a license for legal use! | DEMO">
+          content="{{config('app.name')}}">
     <meta property="og:site_name" content="Dashmix">
     <meta property="og:description"
-          content="Dashmix - Bootstrap 4 Admin Template &amp; UI Framework created by pixelcave and published on Themeforest | This is the demo of Dashmix! You need to purchase a license for legal use! | DEMO">
+          content="{{config('app.name')}}">
     <meta property="og:type" content="website">
     <meta property="og:url" content="">
     <meta property="og:image" content="">
@@ -93,8 +93,7 @@
 <script src="/js/dashmix.core.min-1.1.js"></script>
 <script src="/js/dashmix.app.min-1.1.js"></script>
 <script src="/js/jquery.validate.min.js"></script>
-<script src="/js/op_auth_signin.min.js"></script>
-<script src="/js/op_auth_signup.min.js"></script>
+@yield('scripts')
 </body>
 
 </html>

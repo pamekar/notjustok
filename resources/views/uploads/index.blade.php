@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title','Javascript Records')
+@section('title','Uploads')
 @section('styles')
     <link rel="stylesheet" href="/css/datatables.bootstrap4.css">
     <link rel="stylesheet" href="/css/buttons.bootstrap4.min.css">

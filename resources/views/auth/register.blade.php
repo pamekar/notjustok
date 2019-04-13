@@ -80,3 +80,6 @@
         </div>
     </div>
 @endsection
+@section('scripts')
+    <script src="/js/op_auth_signup.min.js"></script>
+@endsection

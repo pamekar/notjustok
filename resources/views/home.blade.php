@@ -14,12 +14,12 @@
                     seem to be doing great, so keep it up!
                 </p>
                 <a class="btn btn-hero-sm btn-outline-primary btn-square mr-1 mb-1"
-                   href="javascript:void(0)">
-                    <i class="far fa-money-bill-alt fa-fw mr-1"></i> View Using Javascript
+                   href="{{route('records.index')}}">
+                    <i class="fa fa-list-alt fa-fw mr-1"></i> View Records
                 </a>
                 <a class="btn btn-hero-sm btn-outline-primary btn-square mr-1 mb-1"
-                   href="javascript:void(0)">
-                    <i class="far fa-user fa-fw mr-1"></i> View Using PHP
+                   href="{{route('uploads.create')}}">
+                    <i class="fa fa-plus-square fa-fw mr-1"></i> New Upload
                 </a>
             </div>
         </div>
