@@ -87,7 +87,7 @@
                 <div class="links">
                     <a href="https://ng.linkedin.com/in/nduovictor">LinkedIn</a>
                     <a href="https://github.com/pamekar">Github</a>
-                    <a href="https://github.com/pamekar/notjustok">Source Code</a>
+                    <a href="https://github.com/pamekar/parseisok">Source Code</a>
                 </div>
             </div>
         </div>

@@ -107,7 +107,7 @@
         <div class="content-header">
             <div>
                 <a class="link-fx font-size-lg text-dual" href="{{route('welcome')}}">
-                    <span class="font-w700 text-dual">not</span><span class="font-w300">justok</span>
+                    <span class="font-w700 text-dual">parse</span><span class="font-w300">isok</span>
                 </a>
             </div>
             <div class="d-flex align-items-center">

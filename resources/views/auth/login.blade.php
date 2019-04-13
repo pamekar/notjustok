@@ -5,7 +5,7 @@
         <div class="block-content block-content-full px-lg-5 py-md-5 py-lg-6">
             <div class="mb-2 text-center">
                 <a class="link-fx font-w700 font-size-h1" href="{{url('/')}}">
-                    <span class="text-dark">not</span><span class="text-success">justok</span>
+                    <span class="text-dark">parse</span><span class="text-success">IsOK</span>
                 </a>
                 <p class="text-uppercase font-w700 font-size-sm text-muted">@yield('title')</p>
             </div>
@@ -68,9 +68,9 @@
                 </a>
                 <div class="media-body">
                     <p class="text-white font-w600 mb-1">
-                        Amazing framework with tons of options! It helped us build our project!
+                        Get your fingers busy typing your detail. There's much to see beyond here. :)
                     </p>
-                    <a class="text-white-75 font-w600" href="javascript:void(0)">Jesse Fisher, Web Developer</a>
+                    <a class="text-white-75 font-w600" href="javascript:void(0)">Jane Doe, Web Developer</a>
                 </div>
             </div>
         </div>

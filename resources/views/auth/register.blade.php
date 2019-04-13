@@ -5,7 +5,7 @@
         <div class="block-content block-content-full px-lg-5 py-md-5 py-lg-6">
             <div class="mb-2 text-center">
                 <a class="link-fx text-success font-w700 font-size-h1" href="{{url('/')}}">
-                    <span class="text-dark">not</span><span class="text-success">justok</span>
+                    <span class="text-dark">parse</span><span class="text-success">IsOK</span>
                 </a>
                 <p class="text-uppercase font-w700 font-size-sm text-muted">Create New Account</p>
             </div>
@@ -72,9 +72,9 @@
                 </a>
                 <div class="media-body">
                     <p class="text-white font-w600 mb-1">
-                        The service was a valuable asset to improve our conversions and marketing efforts! Thank you!
+                        Our registration process is seamlessly easy. There's much to see on the other side. :)
                     </p>
-                    <a class="text-white-75 font-w600" href="javascript:void(0)">Marie Duncan, CEO</a>
+                    <a class="text-white-75 font-w600" href="javascript:void(0)">John Doe, CEO</a>
                 </div>
             </div>
         </div>
