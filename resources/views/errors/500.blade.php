@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>401/503 - {{config('app.name')}}</title>
+    <title>500 - {{config('app.name')}}</title>
     <meta name="description" content="Dashmix - Bootstrap 4 Admin Template &amp; UI Framework created by pixelcave and published on Themeforest | This is the demo of Dashmix! You need to purchase a license for legal use! | DEMO">
     <meta name="author" content="pixelcave">
     <meta name="robots" content="noindex, nofollow">
@@ -31,9 +31,11 @@
                             <div class="display-1 text-black font-w300">500</div>
                             <h1 class="h2 font-w700 text-white mt-5 mb-3">Oops.. You just found an error page..</h1>
                             <h2 class="h3 font-w400 text-white-75 mb-5">We are sorry but your request contains bad syntax and cannot be fulfilled..</h2>
-                            <a class="btn btn-hero-dark" href="be_pages_error_all.html">
-                                <i class="fa fa-arrow-left mr-1"></i> Back to all Errors
-                            </a>
+                            <div class="invisible" data-toggle="appear" data-class="animated fadeInUp" data-timeout="600">
+                                <a class="btn btn-hero-secondary" href="{{url()->previous()}}">
+                                    <i class="fa fa-arrow-left mr-1"></i> You shouldn't be here.
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>

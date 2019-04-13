@@ -68,7 +68,7 @@
                 </a>
                 <div class="media-body">
                     <p class="text-white font-w600 mb-1">
-                        Get your fingers busy typing your detail. There's much to see beyond here. :)
+                        Get your fingers busy typing your details. There's much to see beyond here. :)
                     </p>
                     <a class="text-white-75 font-w600" href="javascript:void(0)">Jane Doe, Web Developer</a>
                 </div>
