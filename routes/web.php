@@ -11,6 +11,8 @@
 |
 */
 
+use Illuminate\Support\Facades\Route;
+
 Route::get('/', function () {
     return view('welcome');
 })->name('welcome');
@@ -27,6 +29,10 @@ Auth::routes();
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/home', 'HomeController@index')->name('home');
     Route::get('records/json', 'RecordController@json')->name('records.json');
+    Route::get('records/advanced', 'RecordController@advanced')
+        ->name('records.advanced');
+    Route::get('records/search', 'RecordController@search')
+        ->name('records.search');
     Route::get('uploads/json', 'UploadController@json')->name('uploads.json');
     Route::resources([
         'records' => 'RecordController',

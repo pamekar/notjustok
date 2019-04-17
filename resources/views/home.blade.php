@@ -10,8 +10,7 @@
                 </p>
                 <p class="text-muted w-75">
                     You've uploaded <strong>{{$uploads->count()}}</strong> files with a total of
-                    <strong>{{$records->count()}}</strong> records. You
-                    seem to be doing great, so keep it up!
+                    <strong>{{$records->count()}}</strong> records. You seem to be doing great, so keep it up!
                 </p>
                 <a class="btn btn-hero-sm btn-outline-primary btn-square mr-1 mb-1"
                    href="{{route('records.index')}}">

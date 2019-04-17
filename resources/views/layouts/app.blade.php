@@ -28,7 +28,7 @@
             a.async = 1;
             a.src = g;
             m.parentNode.insertBefore(a, m)
-        })(window, document, 'script', 'js/analytics.js', 'ga');
+        })(window, document, 'script', '/js/analytics.js', 'ga');
         ga('create', 'UA-16158021-6', 'auto');
         ga('send', 'pageview');</script>
 </head>
@@ -185,7 +185,7 @@
             <div class="block block-bordered js-classic-nav d-none d-sm-block">
                 <div class="block-content block-content-full">
                     <div class="row no-gutters border">
-                        <div class="col-sm-6 col-xl-3 invisible" data-toggle="appear">
+                        <div class="col-sm-4 col-xl-2 invisible" data-toggle="appear">
                             <a class="block block-bordered block-link-pop text-center mb-0" href="{{route('home')}}">
                                 <div class="block-content block-content-full text-center">
                                     <i class="fa fa-2x fa-home text-primary d-none d-sm-inline-block mb-3"></i>
@@ -193,7 +193,7 @@
                                 </div>
                             </a>
                         </div>
-                        <div class="col-sm-6 col-xl-3 invisible" data-toggle="appear">
+                        <div class="col-sm-4 col-xl-2 invisible" data-toggle="appear">
                             <a class="block block-bordered block-link-pop text-center mb-0"
                                href="{{route('uploads.index')}}">
                                 <div class="block-content block-content-full text-center">
@@ -202,7 +202,7 @@
                                 </div>
                             </a>
                         </div>
-                        <div class="col-sm-6 col-xl-3 invisible" data-toggle="appear">
+                        <div class="col-sm-4 col-xl-2 invisible" data-toggle="appear">
                             <a class="block block-bordered block-link-pop text-center mb-0"
                                href="{{route('uploads.create')}}">
                                 <div class="block-content block-content-full text-center">
@@ -215,8 +215,17 @@
                             <a class="block block-bordered block-link-pop text-center mb-0"
                                href="{{route('records.index')}}">
                                 <div class="block-content block-content-full text-center">
-                                    <i class="fa fa-2x fa-database text-primary d-none d-sm-inline-block mb-3"></i>
-                                    <div class="font-w600 text-uppercase">Records</div>
+                                    <i class="fa fa-2x fa-search text-primary d-none d-sm-inline-block mb-3"></i>
+                                    <div class="font-w600 text-uppercase">Quick Search</div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-sm-6 col-xl-3 invisible" data-toggle="appear">
+                            <a class="block block-bordered block-link-pop text-center mb-0"
+                               href="{{route('records.advanced')}}">
+                                <div class="block-content block-content-full text-center">
+                                    <i class="fa fa-2x fa-search-plus text-primary d-none d-sm-inline-block mb-3"></i>
+                                    <div class="font-w600 text-uppercase">Advanced Search</div>
                                 </div>
                             </a>
                         </div>
@@ -224,7 +233,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-12 invisible" data-toggle="appear">
+                <div class="col-lg-12 invisible" data-toggle="appear" id="app">
                     @yield('content')
                 </div>
             </div>

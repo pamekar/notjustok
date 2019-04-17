@@ -15,7 +15,8 @@ class RecordController extends Controller
      * @return array
      */
 
-    public function index(){
+    public function index()
+    {
         //
         return view('records.index');
     }
@@ -28,9 +29,60 @@ class RecordController extends Controller
     public function json()
     {
         //
-        return Laratables::recordsOf(Record::class,function($query){
-            return $query->where('user_id',Auth::id());
+        return Laratables::recordsOf(Record::class, function ($query) {
+            return $query->where('user_id', Auth::id());
         });
+    }
+
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function advanced()
+    {
+        return view('records.advanced');
+    }
+
+    /**
+     * @return mixed
+     */
+    public function search(Request $request)
+    {
+
+        $columns = [
+            'isrc',
+            'label',
+            'artist',
+            'product_title',
+            'country',
+            'start_at',
+            'end_at'
+        ];
+
+        return Record::where(function ($query) use ($columns, $request) {
+            foreach ($columns as $column) {
+                $request->$column !== null ? $query->whereIn($column,
+                    explode(',', $request->$column)) : null;
+            }
+        })->orderBy($request->order ?: 'id')->paginate(20);
+
+    }
+
+    public function options($column)
+    {
+        if (!in_array($column, [
+            'isrc',
+            'label',
+            'artist',
+            'product_title',
+            'country',
+            'start_at',
+            'end_at'
+        ])
+        ) {
+            abort(404);
+        }
+        return response()->json(Record::distinct()->orderBy($column)
+            ->pluck($column));
     }
 
     /**
@@ -46,7 +98,8 @@ class RecordController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
+     *
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -57,7 +110,8 @@ class RecordController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Record  $record
+     * @param  \App\Record $record
+     *
      * @return \Illuminate\Http\Response
      */
     public function show(Record $record)
@@ -69,7 +123,8 @@ class RecordController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Record  $record
+     * @param  \App\Record $record
+     *
      * @return \Illuminate\Http\Response
      */
     public function edit(Record $record)
@@ -80,8 +135,9 @@ class RecordController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Record  $record
+     * @param  \Illuminate\Http\Request $request
+     * @param  \App\Record              $record
+     *
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Record $record)
@@ -92,7 +148,8 @@ class RecordController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Record  $record
+     * @param  \App\Record $record
+     *
      * @return \Illuminate\Http\Response
      */
     public function destroy(Record $record)
